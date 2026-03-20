@@ -97,6 +97,18 @@
       .nav-link:hover::after {
         width: 100%;
       }
+
+      .lang-btn {
+        cursor: pointer;
+      }
+
+      .lang-btn.active {
+        color: #9ad955;
+      }
+
+      .lang-btn.inactive {
+        color: inherit;
+      }
     </style>
   </head>
 
@@ -133,12 +145,13 @@
 
           <div class="flex items-center gap-4 border-l border-gray-200 pl-6">
             <button
-              class="text-sm font-semibold hover:text-brand-dark transition-colors"
+              id="lang-fr"
+              class="lang-btn text-sm font-semibold hover:text-brand-dark transition-colors"
             >
               FR
             </button>
             <span class="text-gray-300">|</span>
-            <button class="text-sm font-semibold text-brand-dark">EN</button>
+            <button id="lang-en" class="lang-btn text-sm font-semibold text-brand-dark">EN</button>
           </div>
 
           <a
@@ -717,5 +730,446 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Translation data
+      const translations = {
+        en: {
+          nav: {
+            about: "About",
+            skills: "Skills",
+            projects: "Projects",
+            resume: "Resume",
+          },
+          hero: {
+            badge: "Accounting & Finance Student",
+            title: "Translating Data into ",
+            titleSpan: "Financial Strategy.",
+            description:
+              "I am Antony Niama, a dedicated student in accounting and finance. I specialize in building robust financial models, analyzing complex data, and communicating actionable insights to drive strategic decisions.",
+            viewProjects: "View Projects",
+            resumeBtn: "Download Resume",
+          },
+          competencies: {
+            title: "Core Competencies",
+            subtitle:
+              "Combining technical proficiency with strategic thinking to deliver comprehensive financial analysis.",
+            comp1Title: "Financial Modeling",
+            comp1Desc:
+              "Ability to build complex spreadsheets that forecast future performance based on historical data and various assumptions.",
+            comp2Title: "Communication & Storytelling",
+            comp2Desc:
+              'Translating complex financial data into "plain English" for non-finance executives to facilitate decision-making.',
+            comp3Title: "Critical Thinking",
+            comp3Desc:
+              'Identifying "why" a certain trend is happening rather than just reporting "what" happened.',
+            comp4Title: "Ethics and Integrity",
+            comp4Desc:
+              "Given the sensitivity of financial data, maintaining a high ethical standard is non-negotiable in all practices.",
+          },
+          skills: {
+            title: "Technical Arsenal",
+            subtitle:
+              "Mastery of modern tools and programming languages essential for deep financial analysis and automation.",
+          },
+          projects: {
+            title: "Featured Projects",
+            subtitle:
+              "Practical applications of my academic knowledge, showcasing data analysis, financial modeling, and strategic problem-solving.",
+            project1Badge: "Data Analysis",
+            project1Title: "Corporate Valuation Model",
+            project1Desc:
+              "Developed a comprehensive DCF (Discounted Cash Flow) model to evaluate a mid-cap tech company. Cleaned and processed 5 years of historical financial data using Python, and created an interactive dashboard in Power BI for sensitivity analysis on key assumptions like WACC and terminal growth rate.",
+            project1Link: "View on GitHub",
+            project2Badge: "Automation",
+            project2Title: "Automated Budget Forecasting System",
+            project2Desc:
+              "Designed a VBA-powered Excel tool that automatically pulls data from a SQL database to generate rolling 12-month budget forecasts. Reduced manual entry time by 80% and minimized human error in monthly reporting cycles for a simulated manufacturing firm.",
+            project2Link: "View on GitHub",
+            project3Badge: "Risk Management",
+            project3Title: "Portfolio Variance Analysis",
+            project3Desc:
+              "Analyzed a theoretical investment portfolio using Python (Pandas/NumPy) to calculate Value at Risk (VaR) and Expected Shortfall. Created a detailed report translating the statistical findings into strategic recommendations for risk mitigation during market downturns.",
+            project3Link: "View on GitHub",
+            viewAllLink: "View All Projects on GitHub",
+          },
+          education: {
+            title: "Academic Background",
+            degree1: "Master in Corporate Finance",
+            degree1Period: "2023 - Present",
+            degree1School: "University of Paris / Business School",
+            degree1Desc:
+              "Focusing on advanced financial modeling, corporate valuation, M&A strategies, and financial markets. Expected graduation in 2025.",
+            degree2: "Bachelor in Accounting & Finance",
+            degree2Period: "2020 - 2023",
+            degree2School: "University of Economics",
+            degree2Desc:
+              "Graduated with honors. Coursework included Financial Accounting, Management Accounting, Statistics, and Business Law.",
+          },
+          cta: {
+            title: "Ready to add value to your team?",
+            subtitle:
+              "I am currently seeking internship or entry-level opportunities where I can apply my analytical skills and passion for finance to real-world challenges.",
+            resumeBtn: "Download Resume",
+            linkedinBtn: "Connect on LinkedIn",
+          },
+          footer: {
+            copyright: "© 2024 Antony Niama. All rights reserved.",
+            tagline: "Accounting & Finance Portfolio",
+          },
+        },
+        fr: {
+          nav: {
+            about: "À Propos",
+            skills: "Compétences",
+            projects: "Projets",
+            resume: "CV",
+          },
+          hero: {
+            badge: "Étudiant en Comptabilité & Finance",
+            title: "Transformer les Données en ",
+            titleSpan: "Stratégie Financière.",
+            description:
+              "Je suis Antony Niama, étudiant dédié en comptabilité et finance. Je me spécialise dans la création de modèles financiers robustes, l'analyse de données complexes et la communication de perspectives exploitables pour stimuler les décisions stratégiques.",
+            viewProjects: "Voir les Projets",
+            resumeBtn: "Télécharger le CV",
+          },
+          competencies: {
+            title: "Compétences Clés",
+            subtitle:
+              "Combinant la maîtrise technique et la réflexion stratégique pour fournir une analyse financière complète.",
+            comp1Title: "Modélisation Financière",
+            comp1Desc:
+              "Capacité à construire des feuilles de calcul complexes qui prévoient les performances futures sur la base de données historiques et de diverses hypothèses.",
+            comp2Title: "Communication et Narration",
+            comp2Desc:
+              "Traduction de données financières complexes en langage clair pour les cadres non financiers afin de faciliter la prise de décision.",
+            comp3Title: "Esprit Critique",
+            comp3Desc:
+              'Identifier « pourquoi » une certaine tendance se produit plutôt que de simplement rapporter « ce qui » s\'est passé.',
+            comp4Title: "Éthique et Intégrité",
+            comp4Desc:
+              "Compte tenu de la sensibilité des données financières, le maintien d'une norme éthique élevée est non négociable dans toutes les pratiques.",
+          },
+          skills: {
+            title: "Arsenal Technique",
+            subtitle:
+              "Maîtrise des outils modernes et des langages de programmation essentiels pour une analyse financière approfondie et l'automatisation.",
+          },
+          projects: {
+            title: "Projets Phares",
+            subtitle:
+              "Applications pratiques de mes connaissances académiques, mettant en avant l'analyse de données, la modélisation financière et la résolution de problèmes stratégiques.",
+            project1Badge: "Analyse de Données",
+            project1Title: "Modèle d'Évaluation d'Entreprise",
+            project1Desc:
+              "Développé un modèle DCF (Discounted Cash Flow) complet pour évaluer une entreprise technologique de taille moyenne. Nettoyé et traité 5 ans de données financières historiques en utilisant Python, et créé un tableau de bord interactif dans Power BI pour l'analyse de sensibilité sur des hypothèses clés comme le WACC et le taux de croissance terminal.",
+            project1Link: "Voir sur GitHub",
+            project2Badge: "Automatisation",
+            project2Title: "Système de Prévision de Budget Automatisé",
+            project2Desc:
+              "Conçu un outil Excel alimenté par VBA qui extrait automatiquement les données d'une base de données SQL pour générer des prévisions budgétaires roulantes de 12 mois. Réduit le temps d'entrée manuelle de 80% et minimisé les erreurs humaines dans les cycles de rapports mensuels pour une entreprise manufacturière simulée.",
+            project2Link: "Voir sur GitHub",
+            project3Badge: "Gestion des Risques",
+            project3Title: "Analyse de la Variance du Portefeuille",
+            project3Desc:
+              "Analysé un portefeuille d'investissement théorique en utilisant Python (Pandas/NumPy) pour calculer la Valeur à Risque (VaR) et l'Expected Shortfall. Créé un rapport détaillé traduisant les conclusions statistiques en recommandations stratégiques pour l'atténuation des risques lors des baisses de marché.",
+            project3Link: "Voir sur GitHub",
+            viewAllLink: "Voir Tous les Projets sur GitHub",
+          },
+          education: {
+            title: "Formation Académique",
+            degree1: "Master en Finance d'Entreprise",
+            degree1Period: "2023 - Présent",
+            degree1School: "Université de Paris / École de Commerce",
+            degree1Desc:
+              "Se concentrant sur la modélisation financière avancée, l'évaluation d'entreprises, les stratégies de fusion-acquisition et les marchés financiers. Graduation prévue en 2025.",
+            degree2: "Licence en Comptabilité & Finance",
+            degree2Period: "2020 - 2023",
+            degree2School: "Université d'Économie",
+            degree2Desc:
+              "Diplômé avec distinction. Les cours comprenaient la comptabilité financière, la comptabilité de gestion, les statistiques et le droit commercial.",
+          },
+          cta: {
+            title: "Prêt à ajouter de la valeur à votre équipe ?",
+            subtitle:
+              "Je suis actuellement à la recherche d'opportunités de stage ou d'emploi débutant où je peux appliquer mes compétences analytiques et ma passion pour la finance à des défis du monde réel.",
+            resumeBtn: "Télécharger le CV",
+            linkedinBtn: "Connectez-vous sur LinkedIn",
+          },
+          footer: {
+            copyright: "© 2024 Antony Niama. Tous droits réservés.",
+            tagline: "Portfolio Comptabilité & Finance",
+          },
+        },
+      };
+
+      // Current language
+      let currentLang = "en";
+
+      // Initialize language on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get saved language from localStorage or default to 'fr'
+        const savedLang = localStorage.getItem("selectedLanguage") || "fr";
+        setLanguage(savedLang);
+
+        // Add event listeners to language buttons
+        document.getElementById("lang-en").addEventListener("click", function () {
+          setLanguage("en");
+        });
+
+        document.getElementById("lang-fr").addEventListener("click", function () {
+          setLanguage("fr");
+        });
+      });
+
+      // Function to set language
+      function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("selectedLanguage", lang);
+
+        // Update language attribute
+        document.documentElement.lang = lang;
+
+        // Update navigation links
+        document.querySelector('a[href="#about"]').textContent =
+          translations[lang].nav.about;
+        document.querySelector('a[href="#skills"]').textContent =
+          translations[lang].nav.skills;
+        document.querySelector('a[href="#projects"]').textContent =
+          translations[lang].nav.projects;
+
+        // Update resume button in nav
+        const navResumeBtn = document.querySelector(
+          'a[href="cv_antony_english.pdf"]'
+        );
+        if (navResumeBtn) {
+          navResumeBtn.innerHTML =
+            '<i class="fa-solid fa-download"></i> ' +
+            translations[lang].hero.resumeBtn;
+        }
+
+        // Update hero section
+        document.querySelector('span[class*="text-brand-dark"]') &&
+          document.querySelectorAll("h1")[0] &&
+          (document.querySelectorAll("h1")[0].innerHTML =
+            translations[lang].hero.title +
+            " <br /><span class=\"text-brand-dark\">" +
+            translations[lang].hero.titleSpan +
+            "</span>");
+
+        document.querySelector('div[class*="inline-flex items-center gap-2"]')
+          .querySelector("span:last-child").textContent =
+          translations[lang].hero.badge;
+
+        const heroParagraph = document
+          .querySelector("section#about p.text-lg")
+          .parentElement.querySelector("p");
+        if (heroParagraph) {
+          heroParagraph.textContent = translations[lang].hero.description;
+        }
+
+        // Update hero buttons
+        const viewProjectsBtn = document.querySelector(
+          'a[href="#projects"].bg-black'
+        );
+        if (viewProjectsBtn) {
+          viewProjectsBtn.textContent = translations[lang].hero.viewProjects;
+        }
+
+        // Update competencies section
+        document.querySelector("section#competencies h2").textContent =
+          translations[lang].competencies.title;
+        document.querySelector("section#competencies p").textContent =
+          translations[lang].competencies.subtitle;
+
+        // Update competency cards
+        const competencyCards = document.querySelectorAll(
+          "section#competencies h3"
+        );
+        if (competencyCards.length >= 4) {
+          competencyCards[0].textContent =
+            translations[lang].competencies.comp1Title;
+          competencyCards[1].textContent =
+            translations[lang].competencies.comp2Title;
+          competencyCards[2].textContent =
+            translations[lang].competencies.comp3Title;
+          competencyCards[3].textContent =
+            translations[lang].competencies.comp4Title;
+        }
+
+        const competencyDescs = document.querySelectorAll(
+          "section#competencies p.text-gray-600"
+        );
+        if (competencyDescs.length >= 4) {
+          competencyDescs[0].textContent =
+            translations[lang].competencies.comp1Desc;
+          competencyDescs[1].textContent =
+            translations[lang].competencies.comp2Desc;
+          competencyDescs[2].textContent =
+            translations[lang].competencies.comp3Desc;
+          competencyDescs[3].textContent =
+            translations[lang].competencies.comp4Desc;
+        }
+
+        // Update skills section
+        document.querySelector("section#skills h2").textContent =
+          translations[lang].skills.title;
+        const skillsSubtitle = document.querySelector(
+          "section#skills .max-w-2xl p"
+        );
+        if (skillsSubtitle) {
+          skillsSubtitle.textContent = translations[lang].skills.subtitle;
+        }
+
+        // Update projects section
+        const projectsSection = document.querySelector("section#projects");
+        const projectsTitle = projectsSection.querySelector("h2");
+        const projectsSubtitle = projectsSection.querySelector("p");
+        if (projectsTitle) {
+          projectsTitle.textContent = translations[lang].projects.title;
+        }
+        if (projectsSubtitle) {
+          projectsSubtitle.textContent = translations[lang].projects.subtitle;
+        }
+
+        // Update project cards
+        const projectBadges = document.querySelectorAll(
+          "section#projects .absolute.top-4 span"
+        );
+        if (projectBadges.length >= 3) {
+          projectBadges[0].textContent =
+            translations[lang].projects.project1Badge;
+          projectBadges[1].textContent =
+            translations[lang].projects.project2Badge;
+          projectBadges[2].textContent =
+            translations[lang].projects.project3Badge;
+        }
+
+        const projectTitles = document.querySelectorAll(
+          "section#projects h3.text-2xl"
+        );
+        if (projectTitles.length >= 3) {
+          projectTitles[0].textContent =
+            translations[lang].projects.project1Title;
+          projectTitles[1].textContent =
+            translations[lang].projects.project2Title;
+          projectTitles[2].textContent =
+            translations[lang].projects.project3Title;
+        }
+
+        const projectDescs = document.querySelectorAll(
+          "section#projects p.text-gray-600.mb-8"
+        );
+        if (projectDescs.length >= 3) {
+          projectDescs[0].textContent =
+            translations[lang].projects.project1Desc;
+          projectDescs[1].textContent =
+            translations[lang].projects.project2Desc;
+          projectDescs[2].textContent =
+            translations[lang].projects.project3Desc;
+        }
+
+        const projectLinks = document.querySelectorAll(
+          "section#projects a.text-black.font-semibold"
+        );
+        if (projectLinks.length >= 3) {
+          projectLinks[0].innerHTML =
+            translations[lang].projects.project1Link +
+            ' <i class="fa-solid fa-arrow-right"></i>';
+          projectLinks[1].innerHTML =
+            translations[lang].projects.project2Link +
+            ' <i class="fa-solid fa-arrow-right"></i>';
+          projectLinks[2].innerHTML =
+            translations[lang].projects.project3Link +
+            ' <i class="fa-solid fa-arrow-right"></i>';
+        }
+
+        // Update view all projects link
+        const viewAllLink = document.querySelector(
+          "section#projects a.border-2"
+        );
+        if (viewAllLink) {
+          viewAllLink.innerHTML =
+            translations[lang].projects.viewAllLink +
+            ' <i class="fa-brands fa-github"></i>';
+        }
+
+        // Update education section
+        document.querySelector("section#education h2").textContent =
+          translations[lang].education.title;
+
+        const educationItems = document.querySelectorAll(
+          "section#education .bg-gray-50, section#education .bg-white"
+        );
+        if (educationItems.length >= 2) {
+          educationItems[0].querySelector("h3").textContent =
+            translations[lang].education.degree1;
+          educationItems[0].querySelector("span.text-brand-dark").textContent =
+            translations[lang].education.degree1Period;
+          educationItems[0].querySelector("h4").textContent =
+            translations[lang].education.degree1School;
+          educationItems[0].querySelector("p").textContent =
+            translations[lang].education.degree1Desc;
+
+          educationItems[1].querySelector("h3").textContent =
+            translations[lang].education.degree2;
+          educationItems[1].querySelector("span.text-gray-500").textContent =
+            translations[lang].education.degree2Period;
+          educationItems[1].querySelector("h4").textContent =
+            translations[lang].education.degree2School;
+          educationItems[1].querySelector("p").textContent =
+            translations[lang].education.degree2Desc;
+        }
+
+        // Update CTA section
+        document.querySelector("section#cta h2").textContent =
+          translations[lang].cta.title;
+        document.querySelector("section#cta > .container-custom p").textContent =
+          translations[lang].cta.subtitle;
+
+        // Update CTA buttons
+        const ctaResumeBtn = document.querySelector(
+          "section#cta a[href='cv_antony_english.pdf']"
+        );
+        if (ctaResumeBtn) {
+          ctaResumeBtn.innerHTML =
+            '<i class="fa-solid fa-download"></i> ' +
+            translations[lang].cta.resumeBtn;
+        }
+
+        const ctaLinkedInBtn = document.querySelector(
+          "section#cta a[href*='linkedin']"
+        );
+        if (ctaLinkedInBtn) {
+          ctaLinkedInBtn.innerHTML =
+            '<i class="fa-brands fa-linkedin"></i> ' +
+            translations[lang].cta.linkedinBtn;
+        }
+
+        // Update footer
+        const footerTexts = document.querySelectorAll("footer p");
+        if (footerTexts.length >= 2) {
+          footerTexts[0].textContent = translations[lang].footer.copyright;
+          footerTexts[1].textContent = translations[lang].footer.tagline;
+        }
+
+        // Update language button styles
+        const langFrBtn = document.getElementById("lang-fr");
+        const langEnBtn = document.getElementById("lang-en");
+
+        if (lang === "fr") {
+          langFrBtn.classList.add("active");
+          langFrBtn.classList.remove("inactive");
+          langEnBtn.classList.remove("active");
+          langEnBtn.classList.add("inactive");
+        } else {
+          langEnBtn.classList.add("active");
+          langEnBtn.classList.remove("inactive");
+          langFrBtn.classList.remove("active");
+          langFrBtn.classList.add("inactive");
+        }
+      }
+    </script>
   </body>
 </html>
