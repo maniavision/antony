@@ -71,6 +71,235 @@
       box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2), 0 2px 4px -1px rgba(16, 185, 129, 0.1);
     }
   </style>
+
+  <script>
+    const translations = {
+      fr: {
+        // Navigation
+        about: "À propos",
+        skills: "Compétences",
+        projects: "Projets",
+        language: "FR / EN",
+        cv: "CV",
+
+        // Hero Section
+        studentStatus: "Étudiant en Comptabilité & Finance",
+        heroTitle: "Analyste Financier",
+        heroTitleHighlight: "& Data Driven",
+        heroDescription: "Passionné par l'analyse de données et la modélisation financière. Je combine une solide formation en comptabilité avec des compétences techniques avancées pour transformer des données complexes en stratégies actionnables.",
+        viewProjects: "Voir mes projets",
+        email: "Email",
+        phone: "Téléphone",
+        location: "Localisation",
+        availability: "Disponibilité",
+        availabilityStatus: "Immédiate",
+        emailValue: "contact@antonyniama.com",
+        phoneValue: "+33 6 12 34 56 78",
+        locationValue: "France",
+
+        // Skills Section
+        expertiseLabel: "Expertise Technique",
+        toolsTitle: "Outils & Technologies",
+        toolsDescription: "Maîtrise des outils d'analyse de données et des logiciels financiers pour optimiser la prise de décision.",
+        pythonLabel: "Python",
+        sqlLabel: "SQL",
+        excelLabel: "Excel Avancé",
+        vbaLabel: "VBA",
+        powerBiLabel: "Power BI",
+        sageLabel: "Sage",
+
+        // Core Competencies
+        coreTitle: "Compétences Clés & Savoir-être",
+        coreDescription: "Au-delà des compétences techniques, je m'appuie sur une forte capacité d'analyse et une éthique rigoureuse pour apporter de la valeur.",
+        seeApplication: "Voir comment je les applique",
+        modeling: "Modélisation Financière",
+        modelingDesc: "Capacité à construire des feuilles de calcul complexes qui prévoient les performances futures basées sur des données historiques et diverses hypothèses.",
+        communication: "Communication & Storytelling",
+        communicationDesc: "Traduction de données financières complexes en \"langage clair\" pour les cadres non financiers, facilitant la prise de décision.",
+        critique: "Pensée Critique",
+        critiqueDesc: "Identification du \"pourquoi\" une certaine tendance se produit plutôt que de simplement rapporter \"ce\" qui s'est passé.",
+        ethics: "Éthique et Intégrité",
+        ethicsDesc: "Étant donné la sensibilité des données financières, le maintien d'une norme éthique élevée est non négociable dans toutes mes analyses.",
+
+        // Projects Section
+        portfolioLabel: "Portfolio",
+        projectsTitle: "Projets Académiques & Personnels",
+        projectsDescription: "Une sélection de projets démontrant ma capacité à appliquer mes compétences techniques à des problématiques financières réelles.",
+        project1Title: "Analyse Prédictive des Marchés",
+        project1Desc: "Développement d'un modèle de prévision utilisant Python pour analyser les tendances historiques et un tableau de bord Power BI interactif pour visualiser les scénarios de risque.",
+        project2Title: "Modélisation LBO Automatisée",
+        project2Desc: "Création d'un modèle Excel complexe avec macros VBA pour évaluer la faisabilité d'acquisitions à effet de levier, incluant des analyses de sensibilité multi-scénarios.",
+        project3Title: "Audit & Nettoyage de Données",
+        project3Desc: "Extraction et structuration de données comptables massives via requêtes SQL complexes pour identifier des anomalies et optimiser le reporting sous Sage.",
+        viewDetails: "Voir les détails",
+        viewGithub: "Voir tous les projets sur GitHub",
+
+        // Education Section
+        educationTitle: "Parcours Académique",
+        educationDescription: "Une formation solide en finance et comptabilité.",
+        master: "Master en Finance d'Entreprise",
+        masterSchool: "Université Paris-Dauphine",
+        masterDesc: "Spécialisation en ingénierie financière, modélisation et analyse de données appliquées à la finance.",
+        license: "Licence en Comptabilité & Gestion",
+        licenseSchool: "Université Paris 1 Panthéon-Sorbonne",
+        licenseDesc: "Bases solides en comptabilité générale, analytique, droit fiscal et contrôle de gestion.",
+
+        // Footer
+        copyright: "© 2024 Antony Niama. Tous droits réservés.",
+      },
+      en: {
+        // Navigation
+        about: "About",
+        skills: "Skills",
+        projects: "Projects",
+        language: "FR / EN",
+        cv: "CV",
+
+        // Hero Section
+        studentStatus: "Accounting & Finance Student",
+        heroTitle: "Financial Analyst",
+        heroTitleHighlight: "& Data Driven",
+        heroDescription: "Passionate about data analysis and financial modeling. I combine strong accounting training with advanced technical skills to transform complex data into actionable strategies.",
+        viewProjects: "View my projects",
+        email: "Email",
+        phone: "Phone",
+        location: "Location",
+        availability: "Availability",
+        availabilityStatus: "Immediate",
+        emailValue: "contact@antonyniama.com",
+        phoneValue: "+33 6 12 34 56 78",
+        locationValue: "France",
+
+        // Skills Section
+        expertiseLabel: "Technical Expertise",
+        toolsTitle: "Tools & Technologies",
+        toolsDescription: "Mastery of data analysis tools and financial software to optimize decision-making.",
+        pythonLabel: "Python",
+        sqlLabel: "SQL",
+        excelLabel: "Advanced Excel",
+        vbaLabel: "VBA",
+        powerBiLabel: "Power BI",
+        sageLabel: "Sage",
+
+        // Core Competencies
+        coreTitle: "Key Skills & Soft Skills",
+        coreDescription: "Beyond technical expertise, I rely on strong analytical ability and rigorous ethics to deliver value.",
+        seeApplication: "See how I apply them",
+        modeling: "Financial Modeling",
+        modelingDesc: "Ability to build complex spreadsheets that forecast future performance based on historical data and various assumptions.",
+        communication: "Communication & Storytelling",
+        communicationDesc: "Translating complex financial data into \"plain language\" for non-financial executives, facilitating decision-making.",
+        critique: "Critical Thinking",
+        critiqueDesc: "Identifying the \"why\" behind trends rather than simply reporting \"what\" happened.",
+        ethics: "Ethics & Integrity",
+        ethicsDesc: "Given the sensitivity of financial data, maintaining high ethical standards is non-negotiable in all my analyses.",
+
+        // Projects Section
+        portfolioLabel: "Portfolio",
+        projectsTitle: "Academic & Personal Projects",
+        projectsDescription: "A selection of projects demonstrating my ability to apply technical skills to real financial challenges.",
+        project1Title: "Predictive Market Analysis",
+        project1Desc: "Development of a forecasting model using Python to analyze historical trends and an interactive Power BI dashboard to visualize risk scenarios.",
+        project2Title: "Automated LBO Modeling",
+        project2Desc: "Creation of a complex Excel model with VBA macros to assess the feasibility of leveraged acquisitions, including multi-scenario sensitivity analysis.",
+        project3Title: "Data Audit & Cleaning",
+        project3Desc: "Extraction and structuring of massive accounting data via complex SQL queries to identify anomalies and optimize Sage reporting.",
+        viewDetails: "View details",
+        viewGithub: "View all projects on GitHub",
+
+        // Education Section
+        educationTitle: "Academic Path",
+        educationDescription: "Strong training in finance and accounting.",
+        master: "Master's in Corporate Finance",
+        masterSchool: "Paris-Dauphine University",
+        masterDesc: "Specialization in financial engineering, modeling and data analysis applied to finance.",
+        license: "Bachelor's in Accounting & Management",
+        licenseSchool: "University of Paris 1 Panthéon-Sorbonne",
+        licenseDesc: "Solid foundation in general accounting, analytical accounting, tax law and management control.",
+
+        // Footer
+        copyright: "© 2024 Antony Niama. All rights reserved.",
+      }
+    };
+
+    let currentLanguage = localStorage.getItem('language') || 'fr';
+
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      localStorage.setItem('language', lang);
+      updatePageLanguage();
+    }
+
+    function updatePageLanguage() {
+      const t = translations[currentLanguage];
+
+      // Update all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+          // Special handling for elements that need HTML
+          if (key === 'heroTitle') {
+            el.innerHTML = t.heroTitle + ' <br><span class="text-primary">' + t.heroTitleHighlight + '</span>';
+          } else if (key === 'viewProjects' || key === 'seeApplication') {
+            const icon = el.querySelector('i') ? '<i class="fa-solid fa-arrow-right"></i>' : '';
+            el.innerHTML = t[key] + (icon ? ' ' + icon.outerHTML : '');
+          } else if (key === 'viewGithub') {
+            el.textContent = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
+
+      // Update competency cards
+      document.querySelectorAll('#core-competencies [data-i18n-title]').forEach(card => {
+        const titleKey = card.getAttribute('data-i18n-title');
+        const descKey = card.getAttribute('data-i18n-desc');
+        if (titleKey) {
+          const h4 = card.querySelector('h4');
+          if (h4) h4.textContent = t[titleKey];
+        }
+        if (descKey) {
+          const p = card.querySelector('p');
+          if (p) p.textContent = t[descKey];
+        }
+      });
+
+      // Update project cards
+      document.querySelectorAll('[data-i18n-project]').forEach(card => {
+        const titleKey = card.getAttribute('data-i18n-title');
+        const descKey = card.getAttribute('data-i18n-desc');
+        if (titleKey) {
+          const h4 = card.querySelector('h4');
+          if (h4) h4.textContent = t[titleKey];
+        }
+        if (descKey) {
+          const paragraphs = card.querySelectorAll('p');
+          if (paragraphs.length > 1) {
+            paragraphs[0].textContent = t[descKey];
+          }
+        }
+      });
+
+      // Update view details links in project cards
+      document.querySelectorAll('[data-i18n="viewDetails"]').forEach(el => {
+        el.textContent = t.viewDetails;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set initial language
+      updatePageLanguage();
+
+      // Language button
+      const langButton = document.querySelector('button:has(i.fa-globe)');
+      if (langButton) {
+        langButton.addEventListener('click', () => {
+          setLanguage(currentLanguage === 'fr' ? 'en' : 'fr');
+        });
+      }
+    });
+  </script>
 </head>
 
 <body class="bg-light text-dark w-full min-h-screen m-0 p-0 overflow-x-hidden">
@@ -117,15 +346,15 @@
         <div
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary w-fit font-medium text-sm">
           <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-          Étudiant en Comptabilité & Finance
+          <span data-i18n="studentStatus">Étudiant en Comptabilité & Finance</span>
         </div>
 
-        <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-gray-900">
+        <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-gray-900" data-i18n="heroTitle">
           Analyste Financier <br>
           <span class="text-primary">& Data Driven</span>
         </h1>
 
-        <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">
+        <p class="text-lg text-gray-600 max-w-2xl leading-relaxed" data-i18n="heroDescription">
           Passionné par l'analyse de données et la modélisation financière. Je combine une solide formation en
           comptabilité avec des compétences techniques avancées pour transformer des données complexes en stratégies
           actionnables.
@@ -133,7 +362,7 @@
 
         <div class="flex flex-wrap items-center gap-4 pt-4">
           <a href="#projects"
-            class="bg-dark hover:bg-gray-800 text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-lg hover:shadow-xl flex items-center gap-2">
+            class="bg-dark hover:bg-gray-800 text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-lg hover:shadow-xl flex items-center gap-2" data-i18n="viewProjects">
             Voir mes projets <i class="fa-solid fa-arrow-right"></i>
           </a>
           <div class="flex items-center gap-3 px-4">
@@ -154,20 +383,20 @@
 
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 mt-8 border-t border-gray-200">
           <div>
-            <p class="text-sm text-gray-500 mb-1">Email</p>
-            <p class="font-medium text-gray-900 truncate">contact@antonyniama.com</p>
+            <p class="text-sm text-gray-500 mb-1" data-i18n="email">Email</p>
+            <p class="font-medium text-gray-900 truncate" data-i18n="emailValue">contact@antonyniama.com</p>
           </div>
           <div>
-            <p class="text-sm text-gray-500 mb-1">Téléphone</p>
-            <p class="font-medium text-gray-900">+33 6 12 34 56 78</p>
+            <p class="text-sm text-gray-500 mb-1" data-i18n="phone">Téléphone</p>
+            <p class="font-medium text-gray-900" data-i18n="phoneValue">+33 6 12 34 56 78</p>
           </div>
           <div>
-            <p class="text-sm text-gray-500 mb-1">Localisation</p>
-            <p class="font-medium text-gray-900">France</p>
+            <p class="text-sm text-gray-500 mb-1" data-i18n="location">Localisation</p>
+            <p class="font-medium text-gray-900" data-i18n="locationValue">France</p>
           </div>
           <div>
-            <p class="text-sm text-gray-500 mb-1">Disponibilité</p>
-            <p class="font-medium text-primary">Immédiate</p>
+            <p class="text-sm text-gray-500 mb-1" data-i18n="availability">Disponibilité</p>
+            <p class="font-medium text-primary" data-i18n="availabilityStatus">Immédiate</p>
           </div>
         </div>
       </div>
@@ -212,9 +441,9 @@
     <!-- Technical Skills Section -->
     <section id="skills" class="w-full py-20">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Expertise Technique</h2>
-        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Outils & Technologies</h3>
-        <p class="text-gray-600 text-lg">Maîtrise des outils d'analyse de données et des logiciels financiers pour
+        <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3" data-i18n="expertiseLabel">Expertise Technique</h2>
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" data-i18n="toolsTitle">Outils & Technologies</h3>
+        <p class="text-gray-600 text-lg" data-i18n="toolsDescription">Maîtrise des outils d'analyse de données et des logiciels financiers pour
           optimiser la prise de décision.</p>
       </div>
 
@@ -223,40 +452,40 @@
         <div
           class="skill-badge bg-white p-6 rounded-2xl border border-gray-100 flex flex-col items-center justify-center gap-4 text-center">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-16 h-16" alt="Python" />
-          <span class="font-semibold text-gray-800">Python</span>
+          <span class="font-semibold text-gray-800" data-i18n="pythonLabel">Python</span>
         </div>
         <!-- Skill 2 -->
         <div
           class="skill-badge bg-white p-6 rounded-2xl border border-gray-100 flex flex-col items-center justify-center gap-4 text-center">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqldeveloper/sqldeveloper-original.svg" class="w-16 h-16" alt="SQL" />
-          <span class="font-semibold text-gray-800">SQL</span>
+          <span class="font-semibold text-gray-800" data-i18n="sqlLabel">SQL</span>
         </div>
         <!-- Skill 3 -->
         <div
           class="skill-badge bg-white p-6 rounded-2xl border border-gray-100 flex flex-col items-center justify-center gap-4 text-center">
           <div class="w-16 h-16 bg-[#00B050] rounded-lg flex items-center justify-center text-white font-bold text-2xl">
             XL</div>
-          <span class="font-semibold text-gray-800">Excel Avancé</span>
+          <span class="font-semibold text-gray-800" data-i18n="excelLabel">Excel Avancé</span>
         </div>
         <!-- Skill 4 -->
         <div
           class="skill-badge bg-white p-6 rounded-2xl border border-gray-100 flex flex-col items-center justify-center gap-4 text-center">
           <div class="w-16 h-16 bg-[#005A9E] rounded-lg flex items-center justify-center text-white font-bold text-2xl">
             VBA</div>
-          <span class="font-semibold text-gray-800">VBA</span>
+          <span class="font-semibold text-gray-800" data-i18n="vbaLabel">VBA</span>
         </div>
         <!-- Skill 5 -->
         <div
           class="skill-badge bg-white p-6 rounded-2xl border border-gray-100 flex flex-col items-center justify-center gap-4 text-center">
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" class="w-16 h-16" alt="Power BI" />
-          <span class="font-semibold text-gray-800">Power BI</span>
+          <span class="font-semibold text-gray-800" data-i18n="powerBiLabel">Power BI</span>
         </div>
         <!-- Skill 6 -->
         <div
           class="skill-badge bg-white p-6 rounded-2xl border border-gray-100 flex flex-col items-center justify-center gap-4 text-center">
           <div class="w-16 h-16 bg-[#00D13B] rounded-lg flex items-center justify-center text-white font-bold text-xl">
             Sage</div>
-          <span class="font-semibold text-gray-800">Sage</span>
+          <span class="font-semibold text-gray-800" data-i18n="sageLabel">Sage</span>
         </div>
       </div>
     </section>
@@ -265,18 +494,18 @@
     <section id="core-competencies" class="w-full py-20 bg-primary/5 rounded-[3rem] px-8 lg:px-16 my-12">
       <div class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="w-full lg:w-1/3">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Compétences Clés & Savoir-être</h2>
-          <p class="text-gray-600 text-lg mb-8">Au-delà des compétences techniques, je m'appuie sur une forte capacité
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" data-i18n="coreTitle">Compétences Clés & Savoir-être</h2>
+          <p class="text-gray-600 text-lg mb-8" data-i18n="coreDescription">Au-delà des compétences techniques, je m'appuie sur une forte capacité
             d'analyse et une éthique rigoureuse pour apporter de la valeur.</p>
           <a href="#projects"
-            class="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors">
+            class="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors" data-i18n="seeApplication">
             Voir comment je les applique <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
         <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Card 1 -->
-          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow" data-i18n-title="modeling" data-i18n-desc="modelingDesc">
             <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-6">
               <i class="fa-solid fa-chart-pie"></i>
             </div>
@@ -286,7 +515,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow" data-i18n-title="communication" data-i18n-desc="communicationDesc">
             <div
               class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl mb-6">
               <i class="fa-solid fa-comments"></i>
@@ -297,7 +526,7 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow" data-i18n-title="critique" data-i18n-desc="critiqueDesc">
             <div
               class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-xl mb-6">
               <i class="fa-solid fa-brain"></i>
@@ -308,7 +537,7 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow" data-i18n-title="ethics" data-i18n-desc="ethicsDesc">
             <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center text-xl mb-6">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
@@ -324,9 +553,9 @@
     <section id="projects" class="w-full py-20">
       <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
         <div class="max-w-2xl">
-          <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Portfolio</h2>
-          <h3 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Projets Académiques & Personnels</h3>
-          <p class="text-gray-600 text-lg">Une sélection de projets démontrant ma capacité à appliquer mes compétences
+          <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3" data-i18n="portfolioLabel">Portfolio</h2>
+          <h3 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4" data-i18n="projectsTitle">Projets Académiques & Personnels</h3>
+          <p class="text-gray-600 text-lg" data-i18n="projectsDescription">Une sélection de projets démontrant ma capacité à appliquer mes compétences
             techniques à des problématiques financières réelles.</p>
         </div>
         <div class="flex gap-2">
@@ -344,7 +573,7 @@
 
         <!-- Project 1 -->
         <div
-          class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-i18n-project="true" data-i18n-title="project1Title" data-i18n-desc="project1Desc">
           <div class="h-64 overflow-hidden relative">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10"></div>
             <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5572997679-55a882668f35f5cb6a72.png" alt="Dashboard interface showing financial data, charts, graphs, modern clean UI, dark mode with green accents" />
@@ -361,7 +590,7 @@
               de risque.</p>
             <div class="flex items-center justify-between pt-4 border-t border-gray-100">
               <a href="#" class="text-primary font-semibold hover:text-secondary flex items-center gap-2">
-                Voir les détails <i class="fa-solid fa-arrow-right text-sm"></i>
+                <span data-i18n="viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right text-sm"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">
                 <i class="fa-brands fa-github text-xl"></i>
@@ -372,7 +601,7 @@
 
         <!-- Project 2 -->
         <div
-          class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-i18n-project="true" data-i18n-title="project2Title" data-i18n-desc="project2Desc">
           <div class="h-64 overflow-hidden relative">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10"></div>
             <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/71912fc5ce-181cab23925d3d852391.png" alt="Complex Excel spreadsheet with financial modeling, charts, forecasting, clean corporate look" />
@@ -388,7 +617,7 @@
               faisabilité d'acquisitions à effet de levier, incluant des analyses de sensibilité multi-scénarios.</p>
             <div class="flex items-center justify-between pt-4 border-t border-gray-100">
               <a href="#" class="text-primary font-semibold hover:text-secondary flex items-center gap-2">
-                Voir les détails <i class="fa-solid fa-arrow-right text-sm"></i>
+                <span data-i18n="viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right text-sm"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">
                 <i class="fa-brands fa-github text-xl"></i>
@@ -399,7 +628,7 @@
 
         <!-- Project 3 -->
         <div
-          class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-i18n-project="true" data-i18n-title="project3Title" data-i18n-desc="project3Desc">
           <div class="h-64 overflow-hidden relative">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10"></div>
             <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b4d2149d28-1f7788c2e5ad9a9ed69c.png" alt="Database schema and data tables visualization, SQL queries, clean technical interface" />
@@ -415,7 +644,7 @@
               requêtes SQL complexes pour identifier des anomalies et optimiser le reporting sous Sage.</p>
             <div class="flex items-center justify-between pt-4 border-t border-gray-100">
               <a href="#" class="text-primary font-semibold hover:text-secondary flex items-center gap-2">
-                Voir les détails <i class="fa-solid fa-arrow-right text-sm"></i>
+                <span data-i18n="viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right text-sm"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">
                 <i class="fa-brands fa-github text-xl"></i>
@@ -429,7 +658,7 @@
       <div class="mt-12 text-center">
         <a href="#"
           class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-gray-200 rounded-full text-gray-800 font-bold hover:border-primary hover:text-primary transition-colors">
-          <i class="fa-brands fa-github"></i> Voir tous les projets sur GitHub
+          <i class="fa-brands fa-github"></i> <span data-i18n="viewGithub">Voir tous les projets sur GitHub</span>
         </a>
       </div>
     </section>
@@ -438,8 +667,8 @@
     <section id="education" class="w-full py-20">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Parcours Académique</h2>
-          <p class="text-gray-600 text-lg">Une formation solide en finance et comptabilité.</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="educationTitle">Parcours Académique</h2>
+          <p class="text-gray-600 text-lg" data-i18n="educationDescription">Une formation solide en finance et comptabilité.</p>
         </div>
 
         <div class="relative border-l-2 border-primary/30 pl-8 ml-4 md:ml-0 space-y-12">
@@ -448,9 +677,9 @@
             <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-primary border-4 border-white shadow"></div>
             <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
               <span class="text-sm font-bold text-primary mb-2 block">2023 - Présent</span>
-              <h4 class="text-xl font-bold text-gray-900">Master en Finance d'Entreprise</h4>
-              <p class="text-gray-500 mb-4">Université Paris-Dauphine</p>
-              <p class="text-gray-600">Spécialisation en ingénierie financière, modélisation et analyse de données
+              <h4 class="text-xl font-bold text-gray-900" data-i18n="master">Master en Finance d'Entreprise</h4>
+              <p class="text-gray-500 mb-4" data-i18n="masterSchool">Université Paris-Dauphine</p>
+              <p class="text-gray-600" data-i18n="masterDesc">Spécialisation en ingénierie financière, modélisation et analyse de données
                 appliquées à la finance.</p>
             </div>
           </div>
@@ -461,9 +690,9 @@
             </div>
             <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
               <span class="text-sm font-bold text-gray-500 mb-2 block">2020 - 2023</span>
-              <h4 class="text-xl font-bold text-gray-900">Licence en Comptabilité & Gestion</h4>
-              <p class="text-gray-500 mb-4">Université Paris 1 Panthéon-Sorbonne</p>
-              <p class="text-gray-600">Bases solides en comptabilité générale, analytique, droit fiscal et contrôle de
+              <h4 class="text-xl font-bold text-gray-900" data-i18n="license">Licence en Comptabilité & Gestion</h4>
+              <p class="text-gray-500 mb-4" data-i18n="licenseSchool">Université Paris 1 Panthéon-Sorbonne</p>
+              <p class="text-gray-600" data-i18n="licenseDesc">Bases solides en comptabilité générale, analytique, droit fiscal et contrôle de
                 gestion.</p>
             </div>
           </div>
@@ -496,8 +725,8 @@
             class="text-gray-400 hover:text-black transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
         </div>
       </div>
-      <div class="text-center text-gray-400 text-sm mt-8">
-        &copy; 2024 Antony Niama. Tous droits réservés.
+      <div class="text-center text-gray-400 text-sm mt-8" data-i18n="copyright">
+        © 2024 Antony Niama. Tous droits réservés.
       </div>
     </footer>
 
