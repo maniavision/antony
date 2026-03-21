@@ -247,8 +247,9 @@
           if (key === 'heroTitle') {
             el.innerHTML = t.heroTitle + ' <br><span class="text-primary">' + t.heroTitleHighlight + '</span>';
           } else if (key === 'viewProjects' || key === 'seeApplication') {
-            const icon = el.querySelector('i') ? '<i class="fa-solid fa-arrow-right"></i>' : '';
-            el.innerHTML = t[key] + (icon ? ' ' + icon.outerHTML : '');
+            const iconElement = el.querySelector('i');
+            const icon = iconElement ? '<i class="fa-solid fa-arrow-right"></i>' : '';
+            el.innerHTML = t[key] + (icon ? ' ' + icon : '');
           } else if (key === 'viewGithub') {
             el.textContent = t[key];
           } else {
